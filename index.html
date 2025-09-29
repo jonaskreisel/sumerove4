@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumerove.eu - Mezopotámské náboženství</title>
+    <style>
+        /* Reset a základní styly */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4e4bc; /* Pískový podklad */
+            color: #3c2f2f; /* Tmavě hnědá barva textu */
+            line-height: 1.6;
+        }
+
+        /* Hlavička */
+        header {
+            background-color: #8b6f47; /* Hnědá barva hlavičky */
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e0c097; /* Světlý pískový tón */
+        }
+
+        /* Navigační menu */
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: #e0c097;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #2a6f97; /* Modrý akcent při přejetí */
+        }
+
+        .nav-menu a.active {
+            color: #2a6f97;
+            font-weight: bold;
+        }
+
+        /* Hamburger menu pro mobilní zařízení */
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            color: #e0c097;
+            cursor: pointer;
+        }
+
+        /* Hlavní obsah */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            display: none;
+            padding: 2rem;
+            background-color: #fffaf0; /* Světlý pískový podklad sekcí */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        h1, h2, h3 {
+            color: #2a6f97; /* Modrý akcent pro nadpisy */
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Styl pro YouTube videa */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Poměr stran 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Responzivní design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 1rem;
+                background-color: #8b6f47;
+                padding: 1rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            .nav-menu a {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Animace pro přechod stránek */
+        section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Sumerove.eu</div>
+            <div class="hamburger">☰</div>
+            <ul class="nav-menu">
+                <li><a href="#uvod" class="nav-link active">Úvod</a></li>
+                <li><a href="#bozstva" class="nav-link">Božstva</a></li>
+                <li><a href="#zikkuraty" class="nav-link">Zikkuraty</a></li>
+                <li><a href="#ritualy" class="nav-link">Rituály</a></li>
+                <li><a href="#myty" class="nav-link">Mýty a podsvětí</a></li>
+                <li><a href="#demoni" class="nav-link">Démoni</a></li>
+                <li><a href="#me-a-melammu" class="nav-link">Me a Melammu</a></li>
+                <li><a href="#modlitby" class="nav-link">Modlitby</a></li>
+                <li><a href="#audioknihy" class="nav-link">Zajímavé audioknihy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="uvod" class="active">
+            <h1>Úvod</h1>
+            <p>Starověká Mezopotámie, ležící mezi řekami Eufrat a Tigris, byla kolébkou jedné z nejstarších civilizací světa. Náboženství hrálo v životě jejích obyvatel naprosto klíčovou roli – ovlivňovalo politiku, zákony, vědu i každodenní zvyky. Mezopotámci věřili v množství bohů a bohyní, kteří vládli různým oblastem přírody i lidského života. Každé město mělo svého ochránce, jehož sídlem byl chrám či monumentální zikkurat.</p>
+            <p>Víra nebyla jen soukromou záležitostí – obřady, slavnosti a oběti byly veřejnými událostmi, které měly zajistit přízeň bohů a udržet řád ve světě. Představy o podsvětí, příběhy o stvoření a hrdinské mýty se zachovaly na hliněných tabulkách psaných klínovým písmem a dodnes nám přibližují duchovní svět prvních městských kultur.</p>
+            <p>Na tomto webu se seznámíte s hlavními mezopotámskými bohy, posvátnými chrámy a zikkuraty, rituály a slavnostmi i s legendami, které dodnes ovlivňují naše chápání mýtů a náboženství.</p>
+        </section>
+
+        <section id="bozstva">
+            <h1>Božstva</h1>
+            <h2>Bohové a bohyně Mezopotámie</h2>
+            <p>Náboženský svět Mezopotámie byl mimořádně bohatý a rozmanitý. Obyvatelé věřili v množství bohů a bohyní, kteří ovládali přírodní síly i lidský osud. Každé město uctívalo svého hlavního boha, ale pantheon byl společný a propojený. Mezopotámci vnímali bohy jako bytosti nadané obrovskou mocí, ale také se slabostmi a emocemi podobnými lidem.</p>
+            <p>Na vrcholu stál An (někdy nazývaný Anu), bůh nebe a otec bohů. Představoval nejvyšší autoritu, i když v pozdějších dobách ustoupil do pozadí. Velký význam měl také Enlil, bůh větru a bouří, vládce země a ochránce řádu. Jeho rozhodnutí určovala osudy lidí i panovníků. Dalším významným bohem byl Enki, bůh vody, moudrosti a kouzel. Často vystupoval jako ochránce lidstva, který hledal způsoby, jak lidem pomoci, například při velké potopě.</p>
+            <p>Slunce zosobňoval Utu (v Babylónii známý jako Šamaš), bůh světla, spravedlnosti a práva. Lidé se na něj obraceli při soudních sporech a věřili, že svým pohledem odhalí pravdu. Jeho sestra Inanna (později Ištar) byla bohyní lásky, plodnosti, ale i války. Byla jednou z nejuctívanějších a nejoblíbenějších bohyň, spojovanou s krásou, odvahou a také s dramatickými mýty o sestupu do podsvětí.</p>
+            <p>Z božstev pozdějších dob vystupuje Marduk, patron Babylonu, který se stal vrchním bohem babylonského pantheonu. Podle mýtu zvítězil nad pramořskou bohyní Tiamat a stvořil svět z jejího těla.</p>
+            <p>Významní byli i další bohové: Nanna, bůh měsíce, přinášející světlo noci a symbol času; Ninhursag, matka-země, ochránkyně plodnosti a porodů; Ninurta, bůh války, lovu a zemědělství. Podsvětí vládla přísná Ereshkigal, která přijímala duše zemřelých, a její manžel Nergal, bůh války a nemocí, zosobňoval smrt a ničivou sílu. Zajímavým božstvem byla i Ninkasi, bohyně piva, která připomíná význam tohoto nápoje v mezopotámské společnosti.</p>
+            <p>Tento pestrý panteon odráží, jak Mezopotámci chápali svět: bohové byli všude přítomní a jejich vůle zasahovala do každého aspektu života, od počasí až po největší politická rozhodnutí.</p>
+
+            <h3>An</h3>
+            <p>An byl nejvyšší bůh mezopotámského panteonu a zosobňoval samotné nebe. V sumerštině jeho jméno znamená právě „nebe“, a proto byl považován za původce kosmu i všech ostatních bohů. V mýtech v pozdějších dobách ustoupil do pozadí, jeho role stvořitele a garanta řádu zůstala zásadní. Často byl spojován s mocí králů, protože jejich legitimita měla božský původ. Kult boha Ana zdůrazňoval majestát a nedostupnost božské sféry.</p>
+
+            <h3>Enki</h3>
+            <p>Enki byl významný bůh mezopotámského panteonu, vládce sladkých podzemních vod zvaných abzu. Uctívali ho jako božstvo moudrosti, magie, řemesel a stvoření. V mýtech často vystupoval jako ochránce lidí – například je varoval před potopou. Enki byl známý svou chytrostí a schopností řešit konflikty nejen silou, ale také diplomacií. Zobrazován býval s rohy a proudy vody, ze kterých vyrůstaly ryby a symboly plodnosti.</p>
+
+            <h3>Enlil</h3>
+            <p>Enlil patřil k nejmocnějším bohům Mezopotámie a byl pánem větru, vzduchu i bouří. V sumerštině jeho jméno znamená „Pán dechů“, což odráží jeho vliv na životní sílu i přírodní jevy. Byl považován za rozhodující autoritu v božském shromáždění a často určoval osudy bohů i lidí. Jeho sídlem bylo posvátné město Nippur. Enlilova moc vzbuzovala respekt i strach, protože dokázal přinášet požehnání, ale i zkázu.</p>
+
+            <h3>Inanna</h3>
+            <p>Inanna byla jednou z nejvýraznějších bohyň Mezopotámie, zosobněním lásky, sexuality, plodnosti, ale také války a moci. Její povaha byla rozporuplná – mohla být něžnou ochránkyní i nelítostnou bojovnicí. Nejznámější mýtus vypráví o jejím sestupu do podsvětí, odkud se vrátila díky své houževnatosti a podpoře dalších bohů. Její hlavní kultovní centrum bylo ve městě Uruk, kde hrála klíčovou roli v náboženském i politickém životě společnosti.</p>
+
+            <h3>Marduk</h3>
+            <p>Marduk se stal hlavním bohem Babylonu a později celého Mezopotámského panteonu. Původně byl spjat s ochranou města, ale jeho význam vzrostl, když babylonský mýtus Enúma eliš vyprávěl, jak porazil pramořskou bohyni chaosu Tiamat a z jejího těla vytvořil svět. Od té doby byl chápán jako vládce řádu, spravedlnosti a moudrosti. Často byl zobrazován s drakem mušhuššu, symbolem své síly a nadvlády nad chaosem.</p>
+
+            <h3>Ereshkigal</h3>
+            <p>Ereškigal byla vládkyní mezopotámského podsvětí, známého jako Irkalla. Byla sestrou bohyně Inanny a ztělesňovala temnou, neúprosnou stránku existence – smrt a nevyhnutelnost osudu. Na rozdíl od jiných bohů byla spjata především s krutou spravedlností a izolací. V mýtu o Inannině sestupu hrála klíčovou roli, když sestru uvěznila a zabila, dokud nebyla znovu oživena. Ereškigal symbolizovala hranici mezi světem živých a zemí mrtvých.</p>
+
+            <h3>Utu</h3>
+            <p>Utu byl sumerský bůh slunce, spravedlnosti a pravdy. Každý den vyjížděl na nebe ve svém voze a osvětloval svět, čímž zajišťoval řád a odhaloval lež či zločin. Byl vnímán jako ochránce slabých a soudce, který bděl nad férovostí mezi lidmi i bohy. V akkadské tradici je znám jako Šamaš. Jeho hlavní kultovní centrum se nacházelo v městě Sippar, kde byl uctíván jako záruka práva a pořádku.</p>
+        </section>
+
+        <section id="zikkuraty">
+            <h1>Zikkuraty</h1>
+            <h2>Zikkuraty – schodiště k bohům</h2>
+            <p>Zikkuraty patří mezi nejvýraznější symboly mezopotámské architektury a náboženství. Tyto monumentální stavby měly podobu stupňovitých věží s několika terasami, které se postupně zužovaly směrem vzhůru. Jejich hlavní funkcí nebyla obrana ani bydlení, ale náboženský význam – zikkurat byl chápán jako most mezi nebem a zemí, místo, kde se mohli bohové „sestupovat“ k lidem.</p>
+            <p>Každý zikkurat byl součástí chrámového komplexu, který stál v centru města. Na jeho vrcholu se nacházel svatostánek zasvěcený určitému božstvu, kam měli přístup jen kněží. Obyčejní lidé se účastnili obřadů dole u chrámu, ale věřili, že samotná přítomnost zikkuratu zajišťuje blízkost boha a ochranu města.</p>
+            <p>Zikkuraty byly stavěny z nepálených cihel, které byly pokryty pálenými, aby odolaly větru a dešti. Často byly zdobeny barevnými glazurami a jejich masivní schodiště symbolicky vedla směrem k nebi. Nejznámějším příkladem je Etemenanki v Babylonu, zasvěcený bohu Mardukovi, který bývá někdy spojován s biblickou „věží v Babelu“. Další významné zikkuraty stály v Uru, Uruku nebo Nippuru.</p>
+            <p>Tyto stavby nejen ukazují technické dovednosti Mezopotámců, ale také jejich hlubokou víru, že život lidí je neoddělitelně spojen s přízní bohů sídlících vysoko nad nimi.</p>
+
+            <h3>Zikkurat v Uru</h3>
+            <p>Zikkurat v Uru je jednou z nejznámějších a nejlépe dochovaných staveb starověké Mezopotámie. Tento monumentální chrámový komplex byl vybudován kolem roku 2100 př. n. l. za vlády krále Urnammu. Sloužil jako posvátné místo zasvěcené měsíčnímu bohu Nannovi (Sinovi). Stavba měla podobu stupňovité věže s několika terasami a svatyní na vrcholu. Zikkurat symbolizoval spojení mezi nebem a zemí a zároveň ukazoval moc i božskou legitimitu sumerských vládců.</p>
+
+            <h3>Etemenanki</h3>
+            <p>Zikkurat Etemenanki, jehož jméno znamená „Dům základu nebe a země“, byl hlavní chrám babylonského boha Marduka. Podle pramenů dosahoval výšky až 90 metrů a dominoval Babylonu jako nejimpozantnější zikkurat Mezopotámie. Stal se náboženským i symbolickým středem města a někteří badatelé jej spojují s biblickým příběhem o Babylonské věži. Etemenanki vyjadřoval touhu spojit lidský svět s božským a upevnit moc babylonských králů.</p>
+
+            <h3>Eanna</h3>
+            <p>Zikkurat Eanna stál v městě Uruk a byl zasvěcen bohyni Inanně (akkadsky Ištar), patronce lásky, války a plodnosti. Komplex Eanna („Dům nebes“) patřil k nejstarším chrámovým areálům Mezopotámie a hrál zásadní roli v náboženském i politickém životě města. Zikkurat samotný byl součástí širší svatyně, kde se konaly rituály a slavnosti na počest bohyně. Podle tradice je Eanna úzce spjat i s králem Gilgamešem, který měl chrám rozšiřovat a opevňovat.</p>
+
+            <h3>E-abzu</h3>
+            <p>Zikkurat E-abzu („Dům abzu“) stál v městě Eridu, které bylo považováno za nejstarší město Mezopotámie. Chrám byl zasvěcen bohu Enkimu, pánu sladkých podzemních vod, moudrosti a stvoření. Podle sumerské tradice právě zde začaly dějiny lidské civilizace, protože Enki z Eridu šířil posvátné me – principy kultury a řádu. Zikkurat E-abzu byl několikrát přestavován a zůstával posvátným centrem uctívání tohoto boha po celá staletí.</p>
+        </section>
+
+        <section id="ritualy">
+            <h1>Rituály</h1>
+            <h2>Náboženské rituály</h2>
+            <p>Rituály tvořily základ náboženského života v Mezopotámii a byly chápány jako nezbytný prostředek k udržení harmonie mezi lidmi a bohy. Každodenní obřady se konaly v chrámech, kde kněží předkládali bohům dary v podobě jídla, pití či zvířecích obětí. Tyto dary nebyly pouhými symboly – Mezopotámci věřili, že bohové skutečně přijímají jejich podstatu a oplácejí přízní.</p>
+            <p>Velký význam měly také slavnostní procesí a svátky. Nejznámější byla novoroční slavnost Akitu v Babylonu, během níž byl znovu potvrzen vládní mandát krále a symbolicky obnoven řád světa. Obřady zahrnovaly recitaci stvořitelského mýtu Enuma eliš, očistné rituály i slavnostní průvody soch bohů.</p>
+            <p>Součástí náboženského života bylo i věštění. Kněží a věštci zkoumali znamení na obloze, pohyby planet, chování zvířat či vnitřnosti obětovaných beranů. Věřilo se, že bohové takto dávají lidem najevo své záměry. Díky těmto praktikám se Mezopotámci stali průkopníky astronomie a kalendáře.</p>
+            <p>Hudba, zpěv a recitace mýtů doprovázely mnohé obřady a přispívaly k posvátné atmosféře. Rituály nebyly jen formálním úkonem, ale způsobem, jak udržet svět v chodu, zajistit úrodu, ochranu města a blahobyt celé společnosti.</p>
+        </section>
+
+        <section id="myty">
+            <h1>Mýty a podsvětí</h1>
+            <h2>Mýty a posmrtný život</h2>
+            <p>Náboženství starověké Mezopotámie nebylo založeno na jediné svaté knize, ale na množství mýtů a eposů, které se po staletí zapisovaly klínovým písmem na hliněné tabulky. Tyto příběhy vysvětlovaly původ světa, vztah mezi lidmi a bohy i smysl lidského života.</p>
+            <p>Jedním z nejvýznamnějších textů je Enúma eliš, babylonský epos o stvoření světa. Podle něj vznikl kosmos z praoceánu, zosobněného božstvy Apsú a Tiamat. Po božském zápase zvítězil Marduk, patron Babylonu, který z těla Tiamat vytvořil nebe a zemi. Z krve jejího služebníka Kingua pak stvořil lidstvo – aby sloužilo bohům prací a obětmi. Tento mýtus ukazuje, jak Mezopotámci chápali člověka především jako služebníka vyšších sil.</p>
+            <p>Velký vliv měl i Epos o Gilgamešovi, nejstarší dochovaný epos lidstva. Vypráví o králi Uruku, který se vydává hledat nesmrtelnost po smrti svého přítele Enkidua. Gilgamešova cesta končí poznáním, že věčný život není lidským údělem. Místo toho má člověk nacházet smysl v budování, lásce a přátelství. Tento příběh ukazuje, jak Mezopotámci uvažovali o smrtelnosti a limitech lidské existence.</p>
+            <p>Dalším důležitým textem je Eridu Genesis, verze mýtu o stvoření a potopě. Podle ní bohové vytvořili lidi, aby obdělávali zemi. Když se však stali hlučnými a neukázněnými, rozhodli se je zničit potopou. Jen moudrý Ziusudra (později známý jako Atrachasís) byl varován bohem Enkim a postavil loď, na níž přežil spolu s rodinou a zvířaty. Tento mýtus je blízký biblickému příběhu o Noemovi a ukazuje univerzální lidské téma – katastrofu a záchranu.</p>
+            <p>S bohem Enkim souvisí i mýtus Enki a světový řád, který líčí, jak tento bůh moudrosti rozdělil božské funkce a přidělil jednotlivým bohům jejich úkoly. Enki zde vystupuje jako organizátor světa, který přináší lidem řád, zákony a civilizační dovednosti. Tento příběh ukazuje, že bohové nebyli jen ničivou silou, ale také ochránci a dárci kultury.</p>
+            <p>Kromě mýtů o stvoření a hrdinech se Mezopotámci zabývali i otázkou smrti. Věřili, že po skončení života duše sestupuje do podsvětí, které vládla bohyně Ereshkigal spolu se svým manželem Nergalem. Podsvětí bylo temné, prašné a bez radosti – duše zde přežívaly jako stíny, živené pouze obětinami, které jim přinášeli pozůstalí. Neexistovala zde naděje na blažený život po smrti, což činilo posmrtnou existenci spíše břemenem než útěchou.</p>
+            <p>Mýty a představy o posmrtném životě ukazují, že Mezopotámci hledali smysl a jistotu v přítomném světě. Víra v bohy, rituály a společenský řád byla jejich způsobem, jak se vyrovnat s nejistotou lidského údělu a nevyhnutelností smrti.</p>
+
+            <h3>Epos o Gilgamešovi</h3>
+            <p>Epos o Gilgamešovi je nejznámější dílo starověké Mezopotámie a jeden z nejstarších literárních textů světa. Vypráví o králi Gilgamešovi z Uruku, jenž je zčásti bohem a zčásti člověkem. Nejprve vládne tvrdě, ale jeho osud se změní, když potká divokého Enkidua, s nímž se spřátelí. Společně prožívají hrdinská dobrodružství, až Enkidu zemře. Gilgameš pak hledá tajemství nesmrtelnosti, ale poznává, že smrt je nevyhnutelnou součástí lidského života.</p>
+
+            <h3>Enúma Eliš</h3>
+            <p>Enúma eliš je babylonský kosmogonický epos, který popisuje vznik světa a vzestup boha Marduka k nejvyšší moci. Vypráví, jak se z prvotních vod zrodili pradávní bohové Apsú a Tiamat. Z jejich potomků povstaly nové generace, mezi nimiž došlo k boji. Marduk porazil Tiamat, bohyni chaosu, a z jejího těla stvořil nebe a zemi. Epos oslavuje Marduka jako garanta řádu a zdůrazňuje božský původ babylonského království.</p>
+
+            <h3>Inannin sestup do podsvětí</h3>
+            <p>Mýtus Inannin sestup do podsvětí patří k nejpůsobivějším sumerským příběhům. Bohyně Inanna se rozhodne navštívit říši své sestry Ereškigal, vládkyně mrtvých. Aby prošla sedmi branami podsvětí, musí na každé z nich odložit část svého šatu a šperků, až nakonec stanula nahá a bezmocná. Ereškigal ji nechá usmrtit a zavěsit na hák. Díky zásahu dalších bohů je však Inanna oživena a může se vrátit mezi živé, ale jen výměnou za jinou bytost.</p>
+
+            <h3>Enki a světový řád</h3>
+            <p>Mýtus Enki a světový řád vypráví o tom, jak bůh Enki uspořádal svět a rozdělil jednotlivé úkoly mezi bohy i lidi. Po stvoření země, řek a měst určil, které oblasti budou patřit konkrétním božstvům – například bohyni Inanně svěřil moc nad láskou a válkou, zatímco jiným bohům přidělil role spojené s přírodou či řemesly. Tento příběh zdůrazňuje Enkiho moudrost, schopnost plánovat a zajistit harmonii mezi kosmem, lidmi a božstvem.</p>
+
+            <h3>Inanna a Enki</h3>
+            <p>Mýtus Inanna a Enki vypráví, jak bohyně Inanna lstí získala od Enkiho me – posvátné principy a řády civilizace, které zajišťovaly vědění, moc a kulturní rozkvět. Enki je původně ochránce těchto božských darů, ale během hostiny v opilosti je Inanně postupně předává. Když vystřízliví, snaží se je získat zpět, avšak bohyně je odnáší do svého města Uruku. Tím se Uruk stává centrem kultury, náboženství a civilizace Mezopotámie.</p>
+        </section>
+
+        <section id="demoni">
+            <h1>Démoni</h1>
+            <h2>Mezopotámští démoni: strážci i hrozby starověkého světa</h2>
+            <p>Mezopotámie, tedy oblast mezi řekami Eufrat a Tigris, byla kolébkou jedněch z nejstarších civilizací. Spolu s rozvojem měst, písemnictví a náboženství se zde utvářely i představy o nadpřirozených bytostech. Mezi nimi zaujímali zvláštní místo démoni – bytosti, které nebyly nutně jen zlé, ale spíše ztělesňovaly síly chaosu, nemoci či přírodních hrozeb. Mezopotámští lidé věřili, že démoni působí v každodenním životě, a proto se je snažili odvracet pomocí amuletů, zaklínadel a rituálů.</p>
+            <p>Jedním z nejobávanějších démonů byla Lamashtu. Tato démonka s hlavou lvice, tělem ženy a pařáty dravého ptáka byla považována za nepřítele těhotných žen a novorozeňat. Podle víry mohla přinášet nemoc, způsobovat potraty či krást děti z kolébek. Aby se lidé ochránili, nosili amulety se speciálními nápisy nebo zpodobněním jiného démona – Pazuzu.</p>
+            <p>Pazuzu, s hrůzným obličejem, křídly a zvířecími drápy, byl sám o sobě nebezpečnou bytostí spojenou s pouštním větrem a nemocemi. Přesto měl v mezopotámské tradici zvláštní roli: byl totiž považován za účinného ochránce před Lamashtu. Jeho amulety se proto umísťovaly u lože rodičky nebo zavěšovaly nad postýlku dítěte.</p>
+            <p>Tento paradox – že se lidé obraceli k démonovi, aby je chránil před jiným démonem – krásně ukazuje složitost mezopotámských představ. Démoni nebyli jen černobílé postavy zla, ale součást širšího světa, v němž se dobro a zlo často prolínalo. Věřilo se, že správným rituálem lze jejich moc alespoň částečně ovládnout.</p>
+        </section>
+
+        <section id="me-a-melammu">
+            <h1>Me a Melammu</h1>
+            <h2>Me a Melammu: tajemné principy moci v Mezopotámii</h2>
+            <p>Mezopotámská civilizace nebyla jen kolébkou písma a prvních měst, ale také složitých náboženských představ. Mezi nimi vynikají dva důležité pojmy: Me a Melammu. Oba odrážejí starověké chápání božské moci, pořádku a autority, ale každý z nich měl odlišnou povahu a význam.</p>
+            <p>Me lze chápat jako posvátné principy nebo kosmické řády, které určovaly, jak má svět fungovat. Byly to jakési „zákony vesmíru“, darované bohy, které zajišťovaly stabilitu přírody, společnosti i kultury. Me zahrnovala vše od královské moci, moudrosti a spravedlnosti až po dovednosti, jako je hudba, řemesla či písmo. Podle mýtů bohové tyto principy uchovávali, ale mohli je také předávat lidem nebo městům, což dodávalo danému místu božskou legitimitu. Ztráta Me znamenala chaos, zatímco jejich vlastnictví bylo zárukou pořádku a prosperity.</p>
+            <p>Melammu, naopak, označovalo „božský lesk“ či „záři“, která obklopovala božstva a krále. Byla to aura moci, nadpřirozený majestát, jenž působil na okolí respektem i hrůzou. Melammu mohlo oslňovat, ochromovat a chránit svého nositele, ale zároveň budilo bázeň u nepřátel. Tato záře nebyla pouze symbolická – v mezopotámských textech je líčena jako reálná, hmatatelná síla, která činila panovníka „více než lidským“.</p>
+            <p>Spojení Me a Melammu ukazuje, jak Mezopotámci chápali moc: nejen jako politickou nebo vojenskou, ale jako kosmický a duchovní princip. Vládce, který vlastnil Me a vyzařoval Melammu, byl v jejich očích skutečně legitimním prostředníkem mezi bohy a lidmi.</p>
+        </section>
+
+        <section id="modlitby">
+            <h1>Modlitby</h1>
+            <h2>Modlitby v Mezopotámii: hlas lidí do světa bohů</h2>
+            <p>Modlitba hrála v životě starověkých Mezopotámských civilizací stěžejní roli – byla způsobem, jak si udržet kontakt s bohy, čelit osudu, prosit o ochranu, omluvu, zdraví či spravedlnost. Nebyla to jen náboženská rutina, ale hluboký kulturní i sociální prvek, který propojoval krále, kněze i běžné lidi s nadpřirozenými silami.</p>
+            <p>Typická mezopotámská modlitba se skládala z chvály boha (nebo bohů), následovaného žádostí – prosbou o pomoc, ochranu, uzdravení nebo zvrácení nepříznivého osudu. Termín šu-illa (doslova „pozvednutí rukou“) označuje akt modlení – zvedání rukou jako gesto úcty a komunikace s bohem.</p>
+        </section>
+
+        <section id="audioknihy">
+            <h1>Zajímavé audioknihy</h1>
+            <h2>Poslechněte si příběhy Mezopotámie</h2>
+            <p>Objevte fascinující svět mezopotámských mýtů a příběhů prostřednictvím těchto audioknih, které vás provedou starověkými legendami a eposy.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/LK7lzb76Yuw" title="YouTube video player" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/iRdJH1Lg3UY" title="YouTube video player" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // JavaScript pro přepínání stránek a hamburger menu
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            // Přepínání stránek
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // Odebrat třídu active ze všech odkazů a sekcí
+                    links.forEach(l => l.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    // Přidat třídu active na kliknutý odkaz a odpovídající sekci
+                    link.classList.add('active');
+                    const targetId = link.getAttribute('href').substring(1);
+                    document.getElementById(targetId).classList.add('active');
+
+                    // Zavřít menu na mobilních zařízeních
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                    }
+
+                    // Přesun na začátek stránky
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+
+            // Ovládání hamburger menu
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Zavřít menu při kliknutí mimo na mobilních zařízeních
+            document.addEventListener('click', (e) => {
+                if (!navMenu.contains(e.target) && !hamburger.contains(e.target) && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
